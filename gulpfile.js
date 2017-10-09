@@ -5,6 +5,7 @@ var header = require('gulp-header');
 var pkg = require('./package.json');
 var webp = require('gulp-webp');
 var imagemin = require('gulp-imagemin');
+var concat = require('gulp-concat');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -35,7 +36,18 @@ gulp.task('css', ['sass'], function() {
     }))
 });
 
-gulp.task('js', function() {
+gulp.task('vendor-js', function() {
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/popper.js/dist/umd/popper.min.js',
+    'node_modules/jquery.easing/jquery.easing.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js'
+  ])
+  .pipe(concat('vendor.js'))
+  .pipe(gulp.dest('dist/vendor'));
+});
+
+gulp.task('js', ['vendor-js'], function() {
   return gulp.src('js/*.js')
     .pipe(header(banner, {
       pkg: pkg
