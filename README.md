@@ -1,4 +1,4 @@
-# webperf-101-workshop-final
+# webperf-101-workshop
 Material for the web performance workshop
 
 ## Getting started

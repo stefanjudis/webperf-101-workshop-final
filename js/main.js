@@ -1,10 +1,5 @@
-/*!
- * Start Bootstrap - Agency v4.0.0-beta (https://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
- */
-(function(){
-  $(function($) {
+(function($){
+  $(function() {
     "use strict"; // Start of use strict
 
     // Smooth scrolling using jQuery easing
