@@ -3,3 +3,21 @@
   margin: 15px 0;
   text-transform: none;
 }
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 4em;
+  width: 2em;
+  height: 2em;
+  background: #fed136;
+  border-radius: 50%;
+
+  svg {
+    display: block;
+    width: 40%;
+    height: 40%;
+  }
+}
