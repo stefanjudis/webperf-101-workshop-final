@@ -25,10 +25,22 @@ header.masthead {
     }
   }
 
-  background-image: url('../img/header-bg.jpg');
+  background-image: url('../img/header-bg-400.jpg');
 
-  .webp & {
-    background-image: url('../img/header-bg.webp');
+  @media (min-width: 400px) {
+    background-image: url('../img/header-bg-800.jpg');
+
+    .webp & {
+      background-image: url('../img/header-bg-800.webp');
+    }
+  }
+
+  @media (min-width: 800px) {
+    background-image: url('../img/header-bg-full.jpg');
+
+    .webp & {
+      background-image: url('../img/header-bg-full.webp');
+    }
   }
 }
 @media(min-width:768px) {

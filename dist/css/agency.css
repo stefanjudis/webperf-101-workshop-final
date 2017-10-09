@@ -122,7 +122,7 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("../img/header-bg.jpg"); }
+  background-image: url("../img/header-bg-400.jpg"); }
   header.masthead .intro-text {
     padding-top: 150px;
     padding-bottom: 100px; }
@@ -139,8 +139,16 @@ header.masthead {
       margin-bottom: 25px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       text-transform: uppercase; }
-  .webp header.masthead {
-    background-image: url("../img/header-bg.webp"); }
+  @media (min-width: 400px) {
+    header.masthead {
+      background-image: url("../img/header-bg-800.jpg"); }
+      .webp header.masthead {
+        background-image: url("../img/header-bg-800.webp"); } }
+  @media (min-width: 800px) {
+    header.masthead {
+      background-image: url("../img/header-bg-full.jpg"); }
+      .webp header.masthead {
+        background-image: url("../img/header-bg-full.webp"); } }
 
 @media (min-width: 768px) {
   header.masthead .intro-text {
@@ -440,9 +448,19 @@ section#contact {
   background-color: #222222;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../img/map-image.jpg"); }
+  background-image: url("../img/map-image-400.jpg"); }
   .webp section#contact {
-    background-image: url("../img/map-image.webp"); }
+    background-image: url("../img/map-image-400.webp"); }
+  @media (min-width: 400px) {
+    section#contact {
+      background-image: url("../img/map-image-800.jpg"); }
+      .webp section#contact {
+        background-image: url("../img/map-image-800.webp"); } }
+  @media (min-width: 800px) {
+    section#contact {
+      background-image: url("../img/map-image-full.jpg"); }
+      .webp section#contact {
+        background-image: url("../img/map-image-full.webp"); } }
   section#contact .section-heading {
     color: white; }
   section#contact .form-group {

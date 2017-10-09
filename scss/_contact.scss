@@ -4,10 +4,26 @@ section#contact {
   background-repeat: no-repeat;
   background-position: center;
 
-  background-image: url('../img/map-image.jpg');
+  background-image: url('../img/map-image-400.jpg');
 
   .webp & {
-    background-image: url('../img/map-image.webp');
+    background-image: url('../img/map-image-400.webp');
+  }
+
+  @media (min-width: 400px) {
+    background-image: url('../img/map-image-800.jpg');
+
+    .webp & {
+      background-image: url('../img/map-image-800.webp');
+    }
+  }
+
+  @media (min-width: 800px) {
+    background-image: url('../img/map-image-full.jpg');
+
+    .webp & {
+      background-image: url('../img/map-image-full.webp');
+    }
   }
 
   .section-heading {
