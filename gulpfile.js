@@ -4,6 +4,7 @@ var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var pkg = require('./package.json');
 var webp = require('gulp-webp');
+var imagemin = require('gulp-imagemin');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -52,9 +53,10 @@ gulp.task('html', function() {
 
 gulp.task('images', function() {
   return gulp.src('./img/**/*')
-  .pipe(gulp.dest('dist/img'))
-  .pipe(webp())
-  .pipe(gulp.dest('dist/img'))
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/img'))
+    .pipe(webp())
+    .pipe(gulp.dest('dist/img'))
 });
 
 // Copy vendor files from /node_modules into /vendor
