@@ -10,6 +10,40 @@
 
     <title>Agency - Start Bootstrap Theme</title>
 
+    <!-- webp feature detection -->
+    <script>
+      (function() {
+        var webp = {
+          'uri': 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=',
+          'name': 'webp'
+        };
+
+        function test(name, uri, cb) {
+          var image = new Image();
+
+          function addResult(event) {
+            // if the event is from 'onload', check the see if the image's width is
+            // 1 pixel (which indiciates support). otherwise, it fails
+
+            var result = event && event.type === 'load' ? image.width == 1 : false;
+            var baseTest = name === 'webp';
+
+            // add class
+            if (baseTest && result & new Boolean(result)) {
+              document.documentElement.classList.add('webp')
+            }
+          }
+
+          image.onerror = addResult;
+          image.onload = addResult;
+
+          image.src = uri;
+        }
+        // test for webp support in general
+        test(webp.name, webp.uri);
+      })();
+    </script>
+
     <!-- Bootstrap core CSS -->
     <link href="./vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 

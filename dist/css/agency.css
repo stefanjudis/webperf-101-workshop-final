@@ -115,14 +115,14 @@ body {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  background-image: url("../img/header-bg.jpg"); }
   header.masthead .intro-text {
     padding-top: 150px;
     padding-bottom: 100px; }
@@ -139,6 +139,8 @@ header.masthead {
       margin-bottom: 25px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       text-transform: uppercase; }
+  .webp header.masthead {
+    background-image: url("../img/header-bg.webp"); }
 
 @media (min-width: 768px) {
   header.masthead .intro-text {
@@ -436,9 +438,11 @@ header.masthead {
 
 section#contact {
   background-color: #222222;
-  background-image: url("../img/map-image.jpg");
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  background-image: url("../img/map-image.jpg"); }
+  .webp section#contact {
+    background-image: url("../img/map-image.webp"); }
   section#contact .section-heading {
     color: white; }
   section#contact .form-group {

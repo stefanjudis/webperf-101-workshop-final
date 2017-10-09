@@ -2,7 +2,6 @@
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url('../img/header-bg.png');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -24,6 +23,12 @@ header.masthead {
       margin-bottom: 25px;
       @include heading-font;
     }
+  }
+
+  background-image: url('../img/header-bg.jpg');
+
+  .webp & {
+    background-image: url('../img/header-bg.webp');
   }
 }
 @media(min-width:768px) {

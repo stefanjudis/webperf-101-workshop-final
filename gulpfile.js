@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var pkg = require('./package.json');
+var webp = require('gulp-webp');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -51,6 +52,8 @@ gulp.task('html', function() {
 
 gulp.task('images', function() {
   return gulp.src('./img/**/*')
+  .pipe(gulp.dest('dist/img'))
+  .pipe(webp())
   .pipe(gulp.dest('dist/img'))
 });
 
