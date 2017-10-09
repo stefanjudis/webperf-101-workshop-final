@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var uncss = require('gulp-uncss');
+var inlinesource = require('gulp-inline-source');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -42,6 +43,12 @@ gulp.task('uncss', ['html', 'sass'], function () {
       ]
       }))
       .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('inline-css', ['uncss'], function () {
+  return gulp.src('dist/index.html')
+    .pipe(inlinesource())
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('vendor-js', function() {
@@ -84,7 +91,7 @@ gulp.task('images', function() {
 
 
 // Default task
-gulp.task('default', ['js', 'uncss', 'images']);
+gulp.task('default', ['js', 'inline-css', 'images']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -97,7 +104,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'js', 'uncss', 'images'], function() {
+gulp.task('dev', ['browserSync', 'js', 'inline-css', 'images'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['css']);
   gulp.watch('js/*.js', ['js']);
