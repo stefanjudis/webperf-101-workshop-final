@@ -6,6 +6,7 @@ var pkg = require('./package.json');
 var webp = require('gulp-webp');
 var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -52,6 +53,8 @@ gulp.task('js', ['vendor-js'], function() {
     .pipe(header(banner, {
       pkg: pkg
     }))
+    .pipe(concat('main.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.reload({
       stream: true
