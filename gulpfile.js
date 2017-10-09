@@ -109,6 +109,6 @@ gulp.task('dev', ['browserSync', 'copy', 'sass', 'css', 'js', 'html', 'images'],
   gulp.watch('css/*.css', ['css']);
   gulp.watch('js/*.js', ['js']);
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('*.html', ['html', browserSync.reload]);
+  gulp.watch('tpl/*.html', ['html', browserSync.reload]);
   gulp.watch('js/**/*.js', browserSync.reload);
 });
