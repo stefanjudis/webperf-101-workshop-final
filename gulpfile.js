@@ -76,22 +76,9 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/img'))
 });
 
-// Copy vendor files from /node_modules into /vendor
-// NOTE: requires `npm install` before running!
-gulp.task('copy', function() {
-  gulp.src([
-      'node_modules/font-awesome/**',
-      '!node_modules/font-awesome/**/*.map',
-      '!node_modules/font-awesome/.npmignore',
-      '!node_modules/font-awesome/*.txt',
-      '!node_modules/font-awesome/*.md',
-      '!node_modules/font-awesome/*.json'
-    ])
-    .pipe(gulp.dest('dist/vendor/font-awesome'))
-})
 
 // Default task
-gulp.task('default', ['html', 'sass', 'css', 'js', 'images', 'copy']);
+gulp.task('default', ['html', 'sass', 'css', 'js', 'images']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -104,7 +91,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'copy', 'sass', 'css', 'js', 'html', 'images'], function() {
+gulp.task('dev', ['browserSync', 'sass', 'css', 'js', 'html', 'images'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['css']);
   gulp.watch('js/*.js', ['js']);
