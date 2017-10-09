@@ -7,6 +7,7 @@ var webp = require('gulp-webp');
 var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -63,6 +64,7 @@ gulp.task('js', ['vendor-js'], function() {
 
 gulp.task('html', function() {
   return gulp.src('tpl/index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'))
 });
 

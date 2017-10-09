@@ -33,6 +33,7 @@
         "bootstrap": "^4.0.0-beta",
         "font-awesome": "4.7.0",
         "gulp-concat": "^2.6.1",
+        "gulp-htmlmin": "^3.0.0",
         "gulp-imagemin": "^3.4.0",
         "gulp-uglify": "^3.0.0",
         "gulp-webp": "^2.3.0",
