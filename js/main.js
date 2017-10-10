@@ -37,4 +37,9 @@
     });
 
   })
+
+  var observer = lozad('.lozad', {
+    threshold: 0 // ratio of element convergence
+  });
+  observer.observe();
 })(jQuery); // End of use strict

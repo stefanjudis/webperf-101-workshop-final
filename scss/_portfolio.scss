@@ -9,6 +9,15 @@
       max-width: 400px;
       margin: 0 auto;
       cursor: pointer;
+
+      padding-top: 75%;
+
+      img {
+        position: absolute;
+        top: 0;
+        z-index: 0;
+      }
+
       .portfolio-hover {
         position: absolute;
         width: 100%;
@@ -18,6 +27,8 @@
         transition: all ease 0.5s;
         opacity: 0;
         background: fade-out($theme-primary, .1);
+        top: 0;
+
         &:hover {
           opacity: 1;
         }
