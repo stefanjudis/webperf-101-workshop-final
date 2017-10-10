@@ -107,7 +107,6 @@ gulp.task('browserSync', function() {
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'js', 'inline-css', 'images'], function() {
   gulp.watch('scss/*.scss', ['sass']);
-  gulp.watch('css/*.css', ['css']);
   gulp.watch('js/*.js', ['js']);
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('tpl/*.html', ['html', browserSync.reload]);
